@@ -8,9 +8,7 @@ namespace WeatherApp
         //TODO: Add app context on app start to display weather page
         public WeatherPage()
         {
-            InitializeComponent();
-
-           
+            InitializeComponent();        
             BindingContext = new Weather();
         }
 
