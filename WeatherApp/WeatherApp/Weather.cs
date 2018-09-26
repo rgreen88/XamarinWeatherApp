@@ -8,6 +8,7 @@ namespace WeatherApp
     {
         // Because labels bind to these values, set them to an empty string to
         // ensure that the label appears on all platforms by default.
+        //DataService -> Core -> Weather -> UI display
         public string Title { get; set; } = " ";
         public string Temperature { get; set; } = " ";
         public string Wind { get; set; } = " ";
