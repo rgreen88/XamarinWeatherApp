@@ -15,8 +15,14 @@ namespace WeatherApp
         //Added on click event for button to fetch zipcode weather
         private async void GetWeatherBtn_Clicked(object sender, EventArgs e)
         {
-            Weather weather = await Core.GetWeather("30519");//Buford, Ga
-            getWeatherBtn.Text = weather.Title;
-        } //Set the default page on app load 
+            //if zipCodeEntry is NOT empty, populate all data regarding weather from zipcode
+            //using "Weather" identifier. Each requested value is located in Weather.cs
+            if (!String.IsNullOrEmpty(zipCodeEntry.Text))
+            {
+                Weather weather = await Core.GetWeather(zipCodeEntry.Text);
+                BindingContext = weather;
+                getWeatherBtn.Text = "Search Again";
+            }
+        }
     }
 }
